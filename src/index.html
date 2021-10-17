@@ -2,13 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Caesar Cipher</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>CORAZON AZUL</title>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+
   </head>
   <body>
-    <div id="root">
-      <h1>Hello world!</h1>
-    </div>
+   
+    <div id="root" class="screenOne">
+      <h1><span style="color:#3b83bd">ENVÍANOS </span><span style="color:black">TU DENUNCIA</span></h1>
+      <p><span style="color:black">TE RESPONDEREMOS EN BREVE </span></p>
+      <table>
+        <tr>
+          <textarea id="originalMessage" spellcheck="false" placeholder="Ingresa aquí tu denuncia" type="text" name="text"
+            rows="10" cols="40"></textarea>
+          <td>
+             <img class="img1" src="img/text1.png">
+             <input id="nameInf" class="nameInf" spellcheck="false" placeholder="Tu nombre" type="text" name="text">
+          </td>
+
+          <td>
+            <img class="img1" src="img/text2.png">
+            <input id="nameInf" class="nameInf" spellcheck="false" placeholder="Tus apellidos" type="text" name="text">
+          </td>
+        </tr>
+          
+        <td>
+          <img class="img1" src="img/correo.png">
+          <input id="nameInf" class="nameInf" spellcheck="false" placeholder="Tu correo" type="text" name="text">
+        </td>
+        <td>
+          <button id="buttonSend">ENVIAR</button>
+        </td>
+
+      </table>
+      
+      <div id="encryptedRange">
+        <input id="encryptedRange" type="range" value="0" min="-20" max="20"
+          oninput="this.nextElementSibling.value=this.value">
+        <output id="contador">0</output>
+        
+      </div>
+      <div id="encryptedMessage">
+      </div>
+
+
+  </div>
     <script src="index.js" type="module"></script>
+    
   </body>
 </html>
