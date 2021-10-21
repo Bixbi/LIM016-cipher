@@ -4,9 +4,9 @@
 
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
+* [3. Identificación del problema](#3-identificación-del-problema)
+* [4. Investigación](#4-investigación)
+* [5. Planificación](#5-criterios-de-aceptación-mínimos-del-proyecto)
 * [6. Hacker edition](#6-hacker-edition)
 * [7. Consideraciones técnicas](#7-consideraciones-técnicas)
 * [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
@@ -16,16 +16,14 @@
 
 ## 1. Preámbulo
 
-Cifrar significa codificar. El [cifrado César](https://en.wikipedia.org/wiki/Caesar_cipher)
+Cifrar significa codificar. El [cifrado César](https://en.wikipedia.org/wiki/Caesar_cipher) es uno de los primeros métodos de cifrado conocidos históricamente. Julio César lo usó para enviar órdenes a sus generales en los campos de batalla. Consistía en escribir el mensaje con un alfabeto que estaba formado por las letras del alfabeto latino normal desplazadas tres posiciones a la derecha. 
 
 ![caeser-cipher](https://ayudaleyprotecciondatos.es/wp-content/uploads/2020/06/cifrado-cesar-ROT-13.png)
 
-El cifrado César es uno de los primeros métodos de cifrado conocidos históricamente. Julio César lo usó para enviar órdenes a sus generales en los campos de batalla. Consistía en escribir el mensaje con un alfabeto que estaba formado por las letras del alfabeto latino normal desplazadas tres posiciones a la derecha. Con nuestro alfabeto el sistema quedaría así:
+Con nuestro alfabeto el sistema quedaría así:
 
 * Alfabeto en claro: 	A B C D E F G H I J K L M N Ñ O P Q R S T U V W X Y Z
 * Alfabeto cifrado:   D E F G H I J K L M N Ñ O P Q R S T U V W X Y Z A B C
-
-![caeser-cipher](https://ayudaleyprotecciondatos.es/wp-content/uploads/2020/06/cifrado-cesar-ROT-13.png)
 
 Por ejemplo, si usamos un desplazamiento (_offset_) de 3 posiciones:
 
@@ -40,11 +38,10 @@ El receptor del mensaje conocía la clave secreta de éste (es decir, que estaba
 ## 2. Resumen del proyecto
 
 En este proyecto se crea una aplicación web para ingresar denuncias por violación de los
-derechos humanos aplicando el cifrado y descifrado cesar sobre los datos personales y la denuncia ingresada tomando en cuenta la edad(_offset_) del informante para el desplazamiento específico de los caracteres.
+derechos humanos aplicando el cifrado cesar sobre los datos personales y la denuncia ingresada tomando en cuenta la edad(_offset_) del informante para el desplazamiento específico de los caracteres.
 
-Se uso la metodologia de PROBLEM SOLVING FOR DEVELOPERS.
 
-### Identificación
+## 3. Identificación del problema
 El presente proyecto tiene como punto de partidad una problematica muy preocupante en nuestra sociedad que es la "TRATA DE PERSONAS".
 La trata de personas es una forma de esclavitud moderna que vulnera los derechos humanos, comprende la captación, transporte, traslado, acogida o la recepción de personas, recurriendo a la amenaza, uso de fuerza, engaño u otras formas de coacción, como rapto, fraude, engaño, abuso de poder o de una situación de vulnerabilidad con fines de explotación . Es considerado el delito más lucrativo después de tráfico de armas y la comercialización de drogas.
 
@@ -54,17 +51,75 @@ Frente a ello el Ministerio de la Mujer y Poblaciones Vulnerables se une a la ca
 Con la Campaña Corazón Azul se trata de alentar una participación masiva y servir de inspiración a medidas que contribuyan a poner fin a este delito.
 La Campaña permite también que personas expresen su solidaridad con las víctimas de la trata de personas, luciendo para ello un Corazón Azul.
 
-![caeser-cipher](https://www.unodc.org/blueheart/index.html)
+![caeser-cipher](https://pbs.twimg.com/media/D8yw8ujWkAErb4Q.jpg)
 
-(CONTEXTO) --> 
+#### ¿Y el Corazón Azul?
+El Corazón Azul representa la tristeza de quienes son víctimas de la trata de personas y nos recuerda la insensibilidad de quienes compran y venden a otros seres humanos. El uso del color azul de las Naciones Unidas también demuestra el compromiso de la Organización con la lucha contra ese delito que atenta contra la dignidad humana, frente a ello se identifica el principal problema que es la falta de una plataforma que reciba denuncias por violación de los derechos humanos y estas denuncias representen seguridad para el informante.
 
-(PREBLEMA)
 
-(IMPORTANCIA)
+*  (CONTEXTO) : Muchas personas no denuncian un caso de violación de los derechos humanos por temor a que sus datos y denuncias sean identificados y captados en la web, y temen por su seguridad.
 
-### Investigación
+*  (PROBLEMA) : Mantener las denuncias de los informantes sin cifrado en la web representa un riesgo enorme para la seguridad de quienes denuncian.
+
+*  (IMPORTANCIA) : Tener una plataforma web que mantiene los datos seguros y cifrados aumenta la cantidad de personas que dununcien un caso de violación de los derechos humanos.
+
+#### Referencias de Investigación 
+
+- [Ministerio de la Mujer y Poblaciones Vulnerables](https://www.mimp.gob.pe/direcciones/dgcvg/contenidos/articulos.php?codigo=51 )
+
+- [Observatorio Nacional](https://observatorioviolencia.pe/tag/corazon-azul/)
+
+- [United Nations Office on Drugs and Crime](https://www.unodc.org/blueheart/es/about-us.html)
+
+- [Corazón Azul](http://www.corazon-azul.org/)
+
+- [INEI](https://www.inei.gob.pe/media/MenuRecursivo/boletines/boletin_trata_de_personas_4.pdf)
+
+
+## 4. Investigación
+Tomando en consideración que para el desarrollo de la plataforma web de denuncias es necesario implementar un método de cifrado cesar, para lo cual se hizo la busqueda correspondiente y los puntos de partida fueron:
+
+- Definir e identificar la fórmula del cifrado cesar.
+- Identificar la cantidad de caracterez que se tiene que avanzar para el cifrado según la variable offset.
+- Probar con una letra en mayuscula y luego una palabra.
+- Probar con una letra en minuscula y luego una palabra.
+- Evaluar el uso de la letra "ñ", "Ñ" y los numeros.
+- Evaluar el uso de espacios y caracteres.
+- Retornar el mensaje cifrado y una opción de decifrar.
+
+Teniendo en cuenta los items mencionados se realizo la investigación correspondiente, implementando cada uno de ellos en la plataforma web de denuncias.
+
+## 5. Planificación 
+* La planificación se realizó en Github Project .[Github Project].(https://github.com/Bixbi/LIM016-cipher/projects/1), manejando dos sprint en el plazo de dos semanas.
+
+* Prototipo desarrollado en .[Figma].(https://www.figma.com/file/5wNZDmpoNrKYwbCGBLAQzV/Coraz%C3%B3n-Azul-team-library?node-id=0%3A1), para el desarrollo del prototipo se creó una pantalla de inicio donde el denunciante decide si quiere ingresar una denuncia anónima o con datos personales, si el denunciante quiere ingresar una denuncia anónima se le mostrará un formulario solo con casillar generales habilitadas como el lugar del incidente, ubicación, casilla donde ingresara la denuncia y su edad, caso contrario le aparecerá adicional las casillas de nombre, apellido y correo electrónico, tal como se aprecia en las siguientes imagenes:
+
+![figma](figma.png)
+![figma](figma1.png)
+
+
+#### ¿ Quiénes son nuestros usuarios?
+Los usuarios del producto son todas las personas que pueden hacer uso de una computadora y deseen ingresar una denuncia por violacion de los derechos humanos, con total seguridad : Niños/as, adultos, ancianos.
+
+
+#### Definición del producto
+El objetivo del producto es brindar una plataforma segura para el registro de los datos y la denuncia del informante aplicando un metodo de cifrado sobre los datos ingresados para proteger la información del denunciante, se trabaja en coordinación con el Ministerio de la Mujer y Poblaciones Vulnerables, la United Nations Office on Drugs and Crime y apoyando la campaña denominada "CORAZÓN AZUL", brindando una plataforma segura y al alcance de todas las personas que quieran denunciar un caso de violación de los derechos humanos.
+
+#### Proceso
+
+- Prototipado (sketching)
+
+![figma](figma2.png)
+![figma](figma3.png)
+![figma](figma4.png)
+![figma](figma5.png)
+
+Para el diseño del prototipo se considero colores sobrios (azul, celeste, blanco) y un diseño simple y de facil llenado para no dificultar el registro de la denuncia, captando datos esenciales en el registro.
+
+
 
 ### Pseudocodigo
+
 
 ### Testeo o Pruebas
 
@@ -251,6 +306,8 @@ Usa este alfabeto simple (solamente mayúsculas y sin ñ):
 * A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 
 ### Definición del producto
+
+
 
 En el README.md, cuéntanos cómo pensaste en los usuarios y cuál fue tu proceso
 para definir el producto final a nivel de experiencia y de interfaz.

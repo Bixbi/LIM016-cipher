@@ -8,8 +8,17 @@
 
   </head>
   <body>
+
+    <div id="pageOne" class="screenOne">
+      <h1>QUIERO HACER <br> <span class="gameName">UNA DENUNCIA</span></h1>
+      <img class="img1" src="imagenes/portada.jpg">
+      <input id="playerName" type="text" placeholder="Coloca tu nombre aquí">
+      <!--alerta para espacio vacio en nombre de jugador-->
+      <div id="alertName"></div>
+      <button id="button" value="empezar" onclick="empezar()">INICIAR</button>
+    </div>
    
-    <div id="root" class="screenOne">
+    <div id="root" class="screenOne" style="display:none">
       <h1><span style="color:#3b83bd">ENVÍANOS </span><span style="color:black">TU DENUNCIA</span></h1>
       <p><span style="color:black">TE RESPONDEREMOS EN BREVE </span></p>
       <table>
