@@ -117,7 +117,6 @@ El objetivo del producto es brindar una plataforma segura para el registro de lo
 Para el diseño del prototipo se considero colores sobrios (azul, celeste, blanco) y un diseño simple y de facil llenado para no dificultar el registro de la denuncia, captando datos esenciales en el registro.
 
 
-
 ### Pseudocodigo
 
 
