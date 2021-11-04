@@ -1,3 +1,4 @@
+/*Efecto movimiento de la ventana*/
 @keyframes MoverArriba {
   0%{
     opacity: 0;
@@ -9,39 +10,36 @@
   }
 }
 
+/*Estilo del body*/
 body {
-text-align:center;
 background:url('img/fondo1.jpg');
 height: 800px;
 background-size: cover;
+font-family: 'Lora', serif;
+}
 
 
-}
-h1
-{
-font-size:48px;
-}
-p
-{
-font-size:20px;
-}
-/* Estilo de la ventana de bienvenida */
+/*Estilo ventana inicio*/
 .screenOne {
+animation: MoverArriba 1s ease-in;
+width: 550px;
+background-color: #fff;
+margin: 130px auto 80px auto;
+border-radius: 20px;
+}
+
+
+/* Estilo de la ventana de la ventana con datos */
+.screenOne1 {
 animation: MoverArriba 1s ease-in;
 width: 750px;
 background-color: #fff;
 margin: 150px auto 40px auto;
 border-radius: 15px;
-text-align: center;
-padding: 100px;
-
-
+padding: 50px;
 }
 
-.screenOne::before {
-background: rgba(255,255,255, 0.5);
-}
-
+/*Estilo imagenes del costado de las casillas input*/
 .img1{
   width: 75px;
   height: 60px ;
@@ -53,19 +51,71 @@ background: rgba(255,255,255, 0.5);
   left: 22px;
 }
 
-.nameInf {
- width: 250px;
+/*Estilo del elemento range*/
+input[type='range'] {
+  display: block;
+  width: 250px;
+}
+
+/*Estilo de la imagen de inicio*/
+.img2{
+width: 480px;
+height: 380px;
+position: relative;
+top: -120px;
+}
+
+/*Estilo de la imagen de inicio*/
+.img3{
+width: 120px;
+height: 70px;
+position: relative;
+top: -160px;
+right: 270px;
+}
+
+/*Estilo de la imagen de inicio*/
+.img4{
+width: 50px;
+height: 50px;
+position: relative;
+top: -45px;
+right: -180px;
+}
+
+
+div h1, p{
+	text-align: center;
+}
+/*Estilo de las casilla de datos del denunciante*/
+.informantData {
+ width: 195px;
  background-color: #fff;
- padding: 15px;
+ padding: 10px;
  border: 1px solid #ccc;
  bottom: 4px;
-  border-bottom-right-radius: 27px;
-    }
+ border-bottom-right-radius: 27px;
+}
 
 
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*Formato de la cabecera*/
+.cabecera{
+	text-decoration: underline;
+	line-height: 200%;
+	font-family: serif;
+	color: #027fff;
+}
+
+/*Estilo textarea donde va la denuncia*/
 #originalMessage{
  width: 700px;
- height: 300px ;
+ height: 150px ;
  background-color:#fff;
  padding: 15px;
  border: 1px solid #ccc;
@@ -73,37 +123,125 @@ background: rgba(255,255,255, 0.5);
  border-radius: 20px;
 }
 
-#buttonSend {
+/*Estilo boton enviar*/
+.button {
   display: inline-block;
   border-radius: 4px;
   background-color: #027fff;
   border: none;
   color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 200px;
+  text-align:center;
+  font-size: 15px;
+  width: 220px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+  padding: 10px;
+  
 }
 
-.screenOne {
-animation: MoverArriba 1s ease-in;
-width: 400px;
-background-color: #fff;
-margin: 100px auto 30px auto;
-border-radius: 15px;
-text-align: center;
-padding: 20px;
+
+
+/* Styling Radio & Checkbox Input Fields (start here) */
+label {
+	font-weight: 600;
+	color: #777777;
+	margin-bottom: 11px;
+	width: 100%;
+	float: left;
+	cursor: pointer;
+	padding: 0 0.6em;
+	box-sizing: border-box;
+	background: #e6e6e6;
+	transition: all 0.5s ease 0s;
+    text-align: center;
+    position: relative;
+    top: -105px;
 }
-#playerName{
-font-family: 'Lora', serif;
-text-transform: uppercase;
+
+input[type="radio"],
+input[type="checkbox"] {
+	display: none;
 }
-#greetPlayer{
-text-transform: uppercase;
-font-size: 2.3rem;
-color: red;
-font-weight: 700;
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+	line-height: 3em;
 }
+
+input[type="radio"] + label {
+	border-radius: 50px;
+}
+
+input[type="radio"]:disabled + label,
+input[type="checkbox"]:disabled + label {
+	color: #ccc !important;
+	cursor: not-allowed;
+}
+input[type="radio"]:checked:disabled + label:after,
+input[type="checkbox"]:checked:disabled + label:after {
+	border-color: #ccc;
+}
+
+input[type="radio"] + label:before,
+input[type="checkbox"] + label:before {
+	content: "";
+	width: 26px;
+	height: 26px;
+	float: left;
+	margin-right: 0.5em;
+	border: 2px solid #ccc;
+	background: #fff;
+	margin-top: 0.5em;
+  text-align: center;
+}
+input[type="radio"] + label:before {
+	border-radius: 100%;
+}
+
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+	background: #c1eec2;
+}
+
+input[type="radio"]:checked + label:after {
+	content: "";
+	width: 0;
+	height: 0;
+	border: 7px solid #0fbf12;
+	float: left;
+	margin-left: -1.85em;
+	margin-top: 1em;
+	border-radius: 100%;
+  text-align: center;
+}
+input[type="checkbox"]:checked + label:after {
+	content: "";
+	width: 12px;
+	height: 6px;
+	border: 4px solid #0fbf12;
+	float: left;
+	margin-left: -1.95em;
+	border-right: 0;
+	border-top: 0;
+	margin-top: 1em;
+	transform: rotate(-55deg);
+  text-align: center;
+}
+
+input[type="radio"]:checked + label:before,
+input[type="checkbox"]:checked + label:before {
+	border-color: #0fbf12;
+}
+
+input[type="radio"]:checked:disabled + label,
+input[type="checkbox"]:checked:disabled + label {
+	background: #ccc;
+	color: #fff !important;
+}
+
+input[type="radio"]:checked:disabled + label:before,
+input[type="checkbox"]:checked:disabled + label:before {
+	border-color: #bdbdbd;
+}
+

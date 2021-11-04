@@ -5,59 +5,111 @@
     <title>CORAZON AZUL</title>
     
     <link rel="stylesheet" type="text/css" href="style.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
   </head>
   <body>
 
-    <div id="pageOne" class="screenOne">
-      <h1>QUIERO HACER <br> <span class="gameName">UNA DENUNCIA</span></h1>
-      <img class="img1" src="imagenes/portada.jpg">
-      <input id="playerName" type="text" placeholder="Coloca tu nombre aquí">
-      <!--alerta para espacio vacio en nombre de jugador-->
-      <div id="alertName"></div>
-      <button id="button" value="empezar" onclick="empezar()">INICIAR</button>
-    </div>
+    <div id="pageOne" class="screenOne" style="text-align:center;">
+      <h1>Quiero hacer <br> <span>UNA DENUNCIA</span></h1>
+      <p><span style="color:black">Tu seguridad es lo primero, nosotros te cuidamos y protegemos.</span></p>
+      <img class="img3" src="img/corazon.png">
+      <img class="img2" src="img/ventana 01.png">
+
+    <table style="margin: 0 auto;">
+  
+      <tr>
+    <td>
+    <input type="radio" id="radio1" name="radio01">
+    <label for="radio1">ANÓNIMA</label></td>
+    <td>
+    <input type="radio" id="radio2" name="radio01" checked="checked">
+    <label for="radio2">CON DATOS</label>
+    </td>
+    </tr>
+    </table>
+      </div>      
+    
    
-    <div id="root" class="screenOne" style="display:none">
-      <h1><span style="color:#3b83bd">ENVÍANOS </span><span style="color:black">TU DENUNCIA</span></h1>
+    <div id="root" class="screenOne1" style="display:none" >
+      <h1><span style="color:black">ENVÍANOS </span><span style="color:red">TU DENUNCIA</span></h1>
       <p><span style="color:black">TE RESPONDEREMOS EN BREVE </span></p>
       <table>
         <tr>
+          <span class="cabecera">Descripción de la denuncia:</span>
           <textarea id="originalMessage" spellcheck="false" placeholder="Ingresa aquí tu denuncia" type="text" name="text"
-            rows="10" cols="40"></textarea>
+            rows="7" cols="25"></textarea>
+            <div id="alertDenuncia"></div>
+          <span class="cabecera">Seleccione su edad:</span>
+          <div id="encryptedRange">
+            <input id="encryptedRange" type="range" value="0" min="-100" max="100"
+              oninput="this.nextElementSibling.value=this.value">
+            <output id="contador">0</output>
+          </div>
+          <span class="cabecera">Lugar donde se cometió:</span>
+          <p>Consigne la dirección exacta en donde ocurrieron los hechos o una referencia que permita su localización y haga clik
+            en el boton
+            obtener coordenadas. El mapa mostrara la ubicación consignada.
+          </p>
+          </tr>
+          <tr >
           <td>
-             <img class="img1" src="img/text1.png">
-             <input id="nameInf" class="nameInf" spellcheck="false" placeholder="Tu nombre" type="text" name="text">
+            <input id="informantData" class="informantData" spellcheck="false" placeholder="Departamento" type="text" name="text">
+            <img class="img4" src="img/desplegable.png">
           </td>
-
           <td>
-            <img class="img1" src="img/text2.png">
-            <input id="nameInf" class="nameInf" spellcheck="false" placeholder="Tus apellidos" type="text" name="text">
+            <input id="informantData" class="informantData" spellcheck="false" placeholder="Provincia" type="text" name="text">
+            <img class="img4" src="img/desplegable.png">
+          </td>
+          <td>
+            <input id="informantData" class="informantData" spellcheck="false" placeholder="Distrito" type="text" name="text">  
+            <img class="img4" src="img/desplegable.png">
+          </td>
+         </tr>
+          
+         <tr>
+          <td>
+             <input id="informantData" class="informantData" spellcheck="false" placeholder="Latitud" type="text" name="text">
+          </td>
+          <td>
+            <input id="informantData" class="informantData" spellcheck="false" placeholder="Longitud" type="text" name="text">
+          </td>
+          <td>
+            <button id="buttonUbicacion"  class="button"><img src="img/ubicacion1.png" alt="x" />COORDENADAS</button>
           </td>
         </tr>
-          
+          <tr>
+          <td colspan="3"><iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3877.33859248519!2d-72.88211524934383!3d-13.63715587718305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2spe!4v1635140738156!5m2!1ses!2spe"
+            width="720" height="150" style="border:2;" allowfullscreen="" loading="lazy"></iframe></td>
+          </tr>
+          <tr>
+        <td colspan="3" align="center" >
+          <button  id="buttonSend" class="button">ENVIAR</button>
+        </td></tr>
+      </table>    
+</div>
+
+  <div id="pageTwo" class="screenOne" style="display:none">
+    <h1><span style="color:black"><br>TU DENUNCIA </span><span style="color:red">SE ENVIO CORRECTAMENTE</span></h1>
+    <p><span style="color:black">Solo tu puedes ver esto</span></p>
+         
+    <table style="margin: 0 auto;">
+      <tr>
         <td>
-          <img class="img1" src="img/correo.png">
-          <input id="nameInf" class="nameInf" spellcheck="false" placeholder="Tu correo" type="text" name="text">
+        <span class="cabecera">MENSAJE CIFRADO:</span>
+        <span id="cifrado"></span></td>
+        </tr>
+        <tr><td>
+      <span class="cabecera">MENSAJE ORIGINAL:</span>
+      <span id="original"></span></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <button id="buttonEnd"  class="button">LISTO</button>
         </td>
-        <td>
-          <button id="buttonSend">ENVIAR</button>
-        </td>
-
-      </table>
-      
-      <div id="encryptedRange">
-        <input id="encryptedRange" type="range" value="0" min="-20" max="20"
-          oninput="this.nextElementSibling.value=this.value">
-        <output id="contador">0</output>
-        
-      </div>
-      <div id="encryptedMessage">
-      </div>
-
-
+      </tr>
+    </table>
   </div>
     <script src="index.js" type="module"></script>
-    
   </body>
 </html>
